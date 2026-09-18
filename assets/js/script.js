@@ -37,4 +37,3 @@ if(form){
       message.textContent='Non è stato possibile inviare la richiesta. Riprova tra poco.';
     }
   });
-}if(form){form.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(form),name=data.get('nome'),email=data.get('email'),text=data.get('messaggio');const subject=encodeURIComponent('Richiesta preventivo — Web Vision');const body=encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\nProgetto:\n${text}`);window.location.href=`mailto:web.vision695@gmail.com?subject=${subject}&body=${body}`;});}
