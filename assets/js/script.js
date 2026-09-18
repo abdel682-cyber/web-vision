@@ -18,18 +18,14 @@ if(form){
     const message=form.querySelector('.form-message');
 
     try{
-      const response=await fetch('https://script.google.com/macros/s/AKfycbzx9HcQIon9k1vLkUG7130guCv3N56F_reL01W5bOLdZwK9EnOFQeV0enclQxMNIGi1/exec',{
+      await fetch('https://script.google.com/macros/s/AKfycbzx9HcQIon9k1vLkUG7130guCv3N56F_reL01W5bOLdZwK9EnOFQeV0enclQxMNIGi1/exec',{
         method:'POST',
-mode:'no-cors',
-headers:{
-  'Content-Type':'text/plain;charset=utf-8'
-},
+        mode:'no-cors',
+        headers:{
+          'Content-Type':'text/plain;charset=utf-8'
+        },
         body:JSON.stringify(payload)
       });
-
-      if(!response.ok){
-        throw new Error('Errore nell\'invio');
-      }
 
       message.textContent='Richiesta inviata con successo! Ti ricontatteremo al più presto.';
       form.reset();
@@ -39,4 +35,4 @@ headers:{
     }
   });
 }
-}
+
